@@ -81,7 +81,7 @@ backup_data=/root/Documents
 droplet_ip=123.123.123
 export {backup_data, droplet_ip}
 
-# 7. Create a backup service file
+# 8. Create a backup service file
 
 [Unit]
 Description = back up files from server-one to the backup server using rsync
@@ -93,13 +93,13 @@ ExecStart=/opt/backup/backup-script
 [Install]
 WantedBy=multi-user.target
 
-# 8. Create a backup timer file
+# 9. Create a backup timer file
 
 [Unit]
 Description=Timer to start the gtwtr service which gets the weather everday at 1:00
 
 [Timer]
-OnCalendar=Fri \_\_\_\_\* 01:00:00
+OnCalendar=Fri _-_-\* 01:00:00
 RandomizedDelaySec=10000
 Persistent=True
 Unit=backup-service=.service
