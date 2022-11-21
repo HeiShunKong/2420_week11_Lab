@@ -106,3 +106,10 @@ Unit=backup-service=.service
 
 [Install]
 WantedBy=Timers.target
+
+# 10. Set up sevice
+a. Go to /etc/systemd/system directory using cd /etc/systemd/system.
+b. Put backup.service and backup.timer in the new directory.
+c. Activate both the backup.service and backup.timer service. Using sudo systemctl enable backup.service and sudo systemctl enable backup.timer
+d. To check the status of the services run sudo systemctl status backup.service and sudo systemctl statsus backup.timer
+  
