@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl -s wttr.in/Vancouver -o /etc/motd
+ 

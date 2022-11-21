@@ -1,0 +1,7 @@
+#!/bin/bash
+
+curl -s wttr.in/Vancouver -o /etc/motd
+
+. /opt/backup/backup.config
+
+rsync -aucz -e "ssh -i ~/.ssh/backup-server" ${backup_data} root@${droplet_ip}:~/backup

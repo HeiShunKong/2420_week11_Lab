@@ -1,0 +1,12 @@
+[Unit]
+Description=Timer to start the wthr service which gets the weather everday at 1:00
+
+[Timer]
+OnCalendar=Fri *-*-* 01:00:00
+RandomizedDelaySec=10000
+Persistent=true
+Unit=backup.service
+
+[Install]
+WantedBy=timers.target
+
