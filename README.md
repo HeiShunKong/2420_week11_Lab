@@ -71,6 +71,16 @@ WantedBy=Timers.target
 
 curl -s wttr.in/Vancouver -o /etc/motd
 
+. /opt/backup/backup.config
+
+rsync -aucz -e "ssh -i ~/.ssh/backup-server" ${backup_data} root@${droplet_ip}:~/backup
+
+# 7. Create a config file and write scripts inside
+
+backup_data=/root/Documents
+droplet_ip=123.123.123
+export {backup_data, droplet_ip}
+
 # 7. Create a backup service file
 
 [Unit]
